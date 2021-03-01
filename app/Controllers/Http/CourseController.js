@@ -14,6 +14,28 @@ class CourseController {
   async show({ params }) {
     return await Course.find(params.id);
   }
+
+  async update({ params, request }) {
+    const course = await Course.findOrFail(params.id);
+
+    const dataToUpdate = request.only(["name", "description", "url", "price"]);
+
+    course.merge(dataToUpdate);
+
+    await course.save();
+
+    return course;
+  }
+
+  async delete({ params }) {
+    const course = await Course.findOrFail(params.id);
+
+    await course.delete();
+
+    return {
+      message: "Curso deletado!",
+    };
+  }
 }
 
 module.exports = CourseController;

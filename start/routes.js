@@ -19,3 +19,5 @@ const Route = use("Route");
 Route.post("/courses", "CourseController.store");
 Route.get("/courses", "CourseController.list");
 Route.get("/courses/:id", "CourseController.show");
+Route.put("/courses/:id", "CourseController.update");
+Route.delete("/courses/:id", "CourseController.delete");
