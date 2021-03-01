@@ -19,3 +19,4 @@ const Route = use("Route");
 Route.get("/courses", () => {
   return { message: "Treinamentos Courses!" };
 });
+Route.post("/courses", "CourseController.store");
