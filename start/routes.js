@@ -16,7 +16,6 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use("Route");
 
-Route.get("/courses", () => {
-  return { message: "Treinamentos Courses!" };
-});
 Route.post("/courses", "CourseController.store");
+Route.get("/courses", "CourseController.list");
+Route.get("/courses/:id", "CourseController.show");

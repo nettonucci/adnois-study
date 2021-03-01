@@ -7,6 +7,13 @@ class CourseController {
 
     return await Course.create(dataToCreate);
   }
+  async list() {
+    return await Course.all();
+  }
+
+  async show({ params }) {
+    return await Course.find(params.id);
+  }
 }
 
 module.exports = CourseController;
