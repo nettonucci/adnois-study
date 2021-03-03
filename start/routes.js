@@ -21,4 +21,7 @@ Route.get("/courses", "CourseController.list");
 Route.get("/courses/:id", "CourseController.show");
 Route.put("/courses/:id", "CourseController.update");
 Route.delete("/courses/:id", "CourseController.delete");
+
+Route.post("/memed/", "MemedController.store");
+Route.get("/memed/:id", "MemedController.index");
 //teste de rotas
